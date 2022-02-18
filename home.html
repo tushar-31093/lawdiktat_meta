@@ -50,7 +50,6 @@
     <iframe id="frame" class="frame" allow="camera *; microphone *"></iframe>
 
     <script>
-      const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
       const subdomain = 'lawdiktat'; // Replace with your custom subdomain
       const frame = document.getElementById('frame');
 
