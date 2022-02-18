@@ -39,10 +39,10 @@
       <li>This parent page will receive the url to the avatar when it is created.</li>
       <li>URL will be displayed, and Ready Player Me window will be closed.</li>
     </ul>
-    <p class="warning">
+<!--     <p class="warning">
       If you are a Ready Player Me partner, don't forget to replace 'demo' in the iframe source url with your partner
       subdomain.
-    </p>
+    </p> -->
 
     <input type="button" value="Open Avatar Maker" onClick="displayIframe()" />
 <!--     <p id="avatarUrl">Avatar URL:</p> -->
@@ -50,6 +50,7 @@
     <iframe id="frame" class="frame" allow="camera *; microphone *"></iframe>
 
     <script>
+      const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
       const subdomain = 'lawdiktat'; // Replace with your custom subdomain
       const frame = document.getElementById('frame');
 
