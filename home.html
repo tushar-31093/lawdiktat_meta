@@ -12,9 +12,8 @@
       html,
       body,
       .frame {
-        width: 1280;
-        height: 800;
-        align:center;
+        width: 100%;
+/*         height: 800; */
         /* margin: auto; */
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
           Droid Sans, Helvetica Neue, sans-serif;
@@ -42,7 +41,10 @@
       const frame = document.getElementById('frame');
 
       frame.src = `https://${subdomain}.readyplayer.me/avatar?frameApi`;
-
+      frame.onload = function()
+      {
+      frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+      }
       window.addEventListener('message', subscribe);
       document.addEventListener('message', subscribe);
 
