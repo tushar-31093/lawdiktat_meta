@@ -41,10 +41,6 @@
       const frame = document.getElementById('frame');
 
       frame.src = `https://${subdomain}.readyplayer.me/avatar?frameApi`;
-      frame.onload = function()
-      {
-      frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
-      }
       window.addEventListener('message', subscribe);
       document.addEventListener('message', subscribe);
 
